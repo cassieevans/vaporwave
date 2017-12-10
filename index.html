@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <style>
         body {
-            background-color: #ffffff;
+            background-color: #030303;
             margin: 0;
             overflow: hidden;
         }
@@ -39,11 +39,13 @@
             myCanvas = document.getElementById('myCanvas');
 
         //RENDERER
+
         renderer = new THREE.WebGLRenderer({
             canvas: myCanvas,
-            antialias: true
+            antialias: true,
+            alpha: true
         });
-        renderer.setClearColor(0x000000);
+        renderer.setClearColor(0xffffff, 0);
         renderer.setPixelRatio(window.devicePixelRatio);
         renderer.setSize(window.innerWidth, window.innerHeight);
 
@@ -122,17 +124,17 @@
 
 
 
-        var geometry2 = new THREE.SphereGeometry(50, 20, 20);
-        var mesh2 = new THREE.Mesh(geometry2, material);
-        mesh2.position.z = -200;
-        mesh2.position.x = 100;
-        scene.add(mesh2);
+        // var geometry2 = new THREE.SphereGeometry(50, 20, 20);
+        // var mesh2 = new THREE.Mesh(geometry2, material);
+        // mesh2.position.z = -200;
+        // mesh2.position.x = 100;
+        // scene.add(mesh2);
 
-        var geometry3 = new THREE.PlaneGeometry(10000, 10000, 100, 100);
-        var mesh3 = new THREE.Mesh(geometry3, material);
-        mesh3.rotation.x = -90 * Math.PI / 180;
-        mesh3.position.y = -40;
-        scene.add(mesh3);
+        // var geometry3 = new THREE.PlaneGeometry(10000, 10000, 100, 100);
+        // var mesh3 = new THREE.Mesh(geometry3, material);
+        // mesh3.rotation.x = -90 * Math.PI / 180;
+        // mesh3.position.y = -40;
+        // scene.add(mesh3);
 
 
 
