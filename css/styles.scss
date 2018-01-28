@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Share+Tech+Mono');
-$midGrey: #1d1d1d;
+$midGrey: #464646;
 $darkGrey: #131313;
 $green: #05ffa1;
 $btnColor:#01cdfe;
@@ -27,23 +27,48 @@ monospace;
     transform: translate(-50%, -50%);
 }
 
+html,
+body {
+    position: fixed;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+}
+
 body {
     background-color: $darkGrey;
     margin: 0;
-    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
     font-family: $font;
 }
 
-canvas {
-    width: 100%;
-    height: 100%
+.container1,
+.container2 {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container2 {
+    z-index: 999
+}
+
+#canvas {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0;
+    transition: opacity 1s ease-in;
+    z-index: -2;
 }
 
 
 /* SVG loader */
 
 .color-3 {
-    stroke: $green;
+    stroke: $purple;
     transform: translate3d(2px, 2px, 0);
     stroke-width: 6px;
 }
@@ -85,22 +110,123 @@ canvas {
 }
 
 // Grey Overlays
-.greyLeft {
+.purple {
     position: absolute;
-    left: 0;
-    width: 50vw;
+    top: 0;
+    right: 0;
+    left: -100vw;
+    width: 100vw;
     height: 100vh;
     z-index: 1;
-    background-color: $midGrey;
+    background-color: $purple;
+    margin: 0;
+    padding: 0;
 }
 
-.greyRight {
+.green {
     position: absolute;
+    top: 0;
     right: 0;
-    width: 50vw;
+    left: -100vw;
+    width: 100vw;
     height: 100vh;
     z-index: 1;
-    background-color: $midGrey;
+    background-color: $green;
+    margin: 0;
+    padding: 0;
+}
+
+.blue {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: -100vw;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+    background-color: $blue;
+    margin: 0;
+    padding: 0;
+}
+
+//social
+.social {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 200px;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    transform: translateX(100px);
+}
+
+.fadeIn {
+    transform: translateX(0);
+    opacity: 1;
+    transition: all 0.8s 1s ease-in-out;
+}
+
+#twitter,
+#codepen {
+    width: 80px;
+    height: 80px;
+}
+
+.svg1,
+.svg2 {
+    fill: $midGrey;
+    transition: fill ease-in-out;
+}
+
+.svg1Color {
+    fill: $purple;
+}
+
+#twitter:hover .svg1 {
+    fill: $purple;
+}
+
+.svg2Color {
+    fill: $blue;
+}
+
+#codepen:hover .svg2 {
+    fill: $blue;
+}
+
+//blurb 
+.blurb {
+    position: absolute;
+    bottom: 10px;
+    text-align: center;
+    width: 100%;
+    height: 150px;
+    transform: translateY(50px);
+    opacity: 0;
+    z-index: 99999;
+}
+
+.blurb h1 {
+    color: $midGrey;
+    line-height: 1.8;
+}
+
+.blurb h1 a {
+    color: $midGrey;
+}
+
+.blurb h1 a:hover {
+    color: $green;
+}
+
+.fadeInDown {
+    transform: translateY(0);
+    opacity: 1;
+    transition: all 0.8s 1s ease-in-out;
 }
 
 //Glitch Button
@@ -112,8 +238,6 @@ canvas {
     width: 300px;
     height: 100px;
 }
-
-a {}
 
 .glitch-btn {
     position: absolute;
@@ -402,5 +526,24 @@ a {}
     }
     1% {
         opacity: 1;
+    }
+}
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation: portrait) {
+    .blurb {
+        bottom: 5%;
+    }
+    .letters {
+        width: 80%;
+        height: auto;
+        top: 40%;
+    }
+    h1 {
+        font-size: 16px;
+    }
+    #twitter,
+    #codepen {
+        width: 60px;
+        height: 60px;
     }
 }

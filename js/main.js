@@ -1,12 +1,19 @@
 document.addEventListener('DOMContentLoaded', function() {
 
+
+
     var bounceIn = anime({
         targets: '.letter__part',
+        translateY: {
+            value: [-30, 0],
+            duration: 700,
+            elasticity: 600,
+            easing: 'easeOutElastic'
+        },
         opacity: {
             value: [0, 1],
-            duration: 300,
-            easing: 'linear',
-            delay: 1000
+            duration: 500,
+            easing: 'linear'
         },
         delay: function(el, i) {
             return i * 40
@@ -17,9 +24,9 @@ document.addEventListener('DOMContentLoaded', function() {
     var lineDrawing = anime({
         targets: '.color-3',
         strokeDashoffset: [anime.setDashoffset, 0],
-        easing: 'easeOutElastic',
-        duration: 4000,
-        delay: 1000,
+        easing: 'easeInOutQuad',
+        duration: 700,
+        delay: 100,
         loop: false,
         direction: 'alternate',
     });
@@ -27,9 +34,9 @@ document.addEventListener('DOMContentLoaded', function() {
     var lineDrawing = anime({
         targets: '.color-2',
         strokeDashoffset: [anime.setDashoffset, 0],
-        easing: 'easeOutElastic',
-        duration: 4000,
-        delay: 1300,
+        easing: 'easeInOutQuad',
+        duration: 700,
+        delay: 500,
         loop: false,
         direction: 'alternate',
     });
@@ -40,25 +47,35 @@ document.addEventListener('DOMContentLoaded', function() {
             value: [1, 0],
             duration: 300,
             easing: 'linear',
-            delay: 4000
+            delay: 1800
         }
     });
 
 
     var slideOut = anime({
-        targets: '.greyLeft',
-        duration: 600,
-        translateX: '-100%',
+        targets: '.purple',
+        duration: 800,
+        translateX: '200%',
         easing: 'easeInOutQuad',
-        delay: 5000
+        delay: 2200
+
+    });
+
+
+    var slideOut = anime({
+        targets: '.green',
+        duration: 800,
+        translateX: '200%',
+        easing: 'easeInOutQuad',
+        delay: 2350
 
     });
     var slideOut = anime({
-        targets: '.greyRight',
-        duration: 600,
-        translateX: '100%',
+        targets: '.blue',
+        duration: 800,
+        translateX: '200%',
         easing: 'easeInOutQuad',
-        delay: 5000
+        delay: 2500
 
     });
 
@@ -154,7 +171,8 @@ window.onload = function() {
                 }));
                 scene.add(mesh);
                 mesh.scale.set(8, 8, 8);
-                mesh.position.y = -10;
+                mesh.position.y = -2;
+                mesh.position.x = -1;
 
 
             });
@@ -181,7 +199,7 @@ window.onload = function() {
             line.rotation.z = 2;
             line.position.x = 25;
             line.position.z = 12;
-            line.position.y = -20;
+            line.position.y = -15;
 
 
 
@@ -230,7 +248,18 @@ window.onload = function() {
         }
         setTimeout(function() {
             document.getElementById("preloader").style.display = "none";
-        }, 4000)
+            document.getElementById("canvas").style.opacity = "1";
 
-    }, 4000)
+
+            var social = document.querySelector(".social");
+            social.classList.add("fadeIn");
+
+            var blurb = document.querySelector(".blurb");
+            blurb.classList.add("fadeInDown");
+
+
+        }, 250)
+
+
+    }, 3300)
 };
