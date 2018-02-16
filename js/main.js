@@ -257,6 +257,8 @@ window.onload = function() {
             var blurb = document.querySelector(".blurb");
             blurb.classList.add("fadeInDown");
 
+            var blurb = document.querySelector(".aboutMe");
+            blurb.classList.add("fadeInDown");
 
         }, 250)
 

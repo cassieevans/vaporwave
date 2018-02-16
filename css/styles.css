@@ -1,17 +1,20 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css?family=Share+Tech+Mono");
+• {
+  margin: 0;
+  padding: 0; }
+
 html,
 body {
   position: fixed;
   overflow: hidden;
-  height: 100%;
-  width: 100%; }
-
-body {
-  background-color: #131313;
-  margin: 0;
   width: 100vw;
   height: 100vh;
-  font-family: "Share Tech Mono", monospace; }
+  margin: 0; }
+
+body {
+  background-color: #24212a;
+  font-family: "Share Tech Mono", Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif; }
 
 .container1,
 .container2 {
@@ -108,8 +111,8 @@ body {
   position: absolute;
   top: 0;
   right: 0;
-  height: 200px;
-  margin: 20px;
+  height: auto;
+  margin: 30px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -122,13 +125,16 @@ body {
   transition: all 0.8s 1s ease-in-out; }
 
 #twitter,
-#codepen {
-  width: 80px;
-  height: 80px; }
+#codepen,
+#instagram {
+  width: 70px;
+  height: 70px;
+  margin: 5px; }
 
 .svg1,
-.svg2 {
-  fill: #464646;
+.svg2,
+.svg3 {
+  fill: #919191;
   transition: fill ease-in-out; }
 
 .svg1Color {
@@ -140,48 +146,31 @@ body {
 .svg2Color {
   fill: #01cdfe; }
 
+.svg3Color {
+  fill: #05ffa1; }
+
 #codepen:hover .svg2 {
   fill: #01cdfe; }
 
-.blurb {
-  position: absolute;
-  bottom: 10px;
-  text-align: center;
-  width: 100%;
-  height: 150px;
-  transform: translateY(50px);
-  opacity: 0;
-  z-index: 99999; }
-
-.blurb h1 {
-  color: #464646;
-  line-height: 1.8; }
-
-.blurb h1 a {
-  color: #464646; }
-
-.blurb h1 a:hover {
-  color: #05ffa1; }
-
-.fadeInDown {
-  transform: translateY(0);
-  opacity: 1;
-  transition: all 0.8s 1s ease-in-out; }
+#instagram:hover .svg3 {
+  fill: #05ffa1; }
 
 .aboutMe {
   position: absolute;
-  bottom: 0;
-  right: 0;
-  margin: 80px;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  margin: 50px;
   width: 300px;
   height: 100px; }
 
 .glitch-btn {
   position: absolute;
-  font-size: 36px;
+  font-size: 30px;
   transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
-  color: #afafaf;
-  text-decoration: none; }
+  color: #ffffff;
+  text-decoration: none;
+  font-family: "Share Tech Mono", Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; }
 
 .glitch-btn .mask {
   position: absolute;
@@ -198,7 +187,7 @@ body {
   top: -100%; }
 
 .glitch-btn:hover {
-  color: #464646; }
+  color: #ffffff; }
 
 .glitch-btn:hover:before {
   background: #01cdfe;
@@ -209,7 +198,7 @@ body {
   position: absolute;
   left: -15%;
   top: -50%;
-  background: #464646;
+  background: #4e4e4e;
   width: 40%;
   height: 200%;
   padding: 0px;
@@ -221,7 +210,7 @@ body {
   position: absolute;
   left: -5%;
   top: 105%;
-  background: #ffffff;
+  background: #b967ff;
   width: 112%;
   height: 10%;
   padding: 0px;
@@ -531,21 +520,77 @@ body {
     transform: translate(0.95px, 0.95px); }
   1% {
     opacity: 1; } }
-@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation: portrait) {
+.blurb {
+  position: absolute;
+  bottom: 10px;
+  text-align: center;
+  width: 100%;
+  height: auto;
+  transform: translateY(50px);
+  opacity: 0;
+  z-index: 99999; }
+
+.blurb h3 {
+  color: #919191;
+  line-height: 1.8; }
+
+.blurb h3 a {
+  color: #919191; }
+
+.blurb h3 a:hover {
+  color: #05ffa1; }
+
+.fadeInDown {
+  transform: translateY(0);
+  opacity: 1;
+  transition: all 0.8s 1s ease-in-out; }
+
+@media only screen and (max-device-width: 667px) {
   .blurb {
-    bottom: 5%; }
+    bottom: 10%; }
 
   .letters {
     width: 80%;
     height: auto;
     top: 40%; }
 
-  h1 {
+  .glitch-btn {
+    font-size: 20px; }
+
+  .aboutMe {
+    margin: 30px; }
+
+  h3 {
     font-size: 16px; }
 
   #twitter,
-  #codepen {
+  #codepen,
+  #instagram {
+    width: 50px;
+    height: 50px; } }
+@media only screen and (max-device-width: 1000px) and (orientation: landscape) {
+  .blurb {
+    bottom: 2%; }
+
+  .letters {
+    width: 80%;
+    height: auto;
+    top: 40%; }
+
+  .glitch-btn {
+    font-size: 20px; }
+
+  .aboutMe {
+    margin: 30px; }
+
+  h3 {
+    font-size: 10px; }
+
+  #twitter,
+  #codepen,
+  #instagram {
     width: 60px;
-    height: 60px; } }
+    height: 60px;
+    margin: 5px; } }
 
 /*# sourceMappingURL=styles.css.map */
