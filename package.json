@@ -1,0 +1,26 @@
+{
+  "name": "personal-website",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "cassie": "say cassie",
+    "sass": "node-sass -w sass/ -o css/",
+    "sync": "browser-sync start --server --files \"css/*.css\"",
+    "start": "npm-run-all --parallel sass sync"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cassieevans/vaporwave.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cassieevans/vaporwave/issues"
+  },
+  "homepage": "https://github.com/cassieevans/vaporwave#readme",
+  "devDependencies": {
+    "browser-sync": "^2.24.4",
+    "node-sass": "^4.9.0",
+    "npm-run-all": "^4.1.3"
+  }
+}

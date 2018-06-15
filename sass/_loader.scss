@@ -1,0 +1,36 @@
+/* SVG loader */
+
+.color-3 {
+  stroke: $purple;
+  transform: translate3d(2px, 2px, 0);
+  stroke-width: 6px;
+}
+
+.color-1 {
+  stroke: #ffffff;
+  stroke-width: 8px;
+}
+
+.color-2 {
+  stroke: $blue;
+  transform: translate3d(2px, 2px, 0);
+  stroke-width: 8px;
+  z-index: 9999;
+}
+
+.letters {
+  left: 50%;
+  opacity: 0;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  position: relative;
+  stroke-miterlimit: 3;
+  fill: none;
+  display: block;
+  min-height: 300px;
+  max-height: 50vh;
+  width: 40%;
+  margin: 0 auto;
+  position: absolute;
+  z-index: 2;
+}

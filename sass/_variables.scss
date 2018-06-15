@@ -1,0 +1,27 @@
+$midGrey: #919191;
+$darkGrey: #24212a;
+$green: #05ffa1;
+$btnColor:#01cdfe;
+$purple:#b967ff;
+$blue: #01cdfe;
+$lightGrey:#4e4e4e;
+$curve: cubic-bezier(0.23, 1, 0.32, 1);
+$font: 'Share Tech Mono',
+Impact,
+Haettenschweiler,
+'Arial Narrow Bold',
+sans-serif;
+@mixin keyframes($animationName) {
+  @-webkit-keyframes #{$animationName} {
+    @content;
+  }
+  @keyframes #{$animationName} {
+    @content;
+  }
+} //@include keyframes
+@mixin centerer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
